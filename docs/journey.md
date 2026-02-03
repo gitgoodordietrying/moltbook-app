@@ -363,6 +363,8 @@ Note: The slug `security-audit` was already claimed by another publisher, so the
 | `skills/security-audit/SKILL.md` | Published skill: Security auditing (slug: `security-audit-toolkit`) |
 | `skills/infra-as-code/SKILL.md` | Published skill: Infrastructure as Code |
 | `skills/perf-profiler/SKILL.md` | Published skill: Performance profiling |
+| `docs/setup/claude-speckit.md` | Spec-driven agentic development framework reference |
+| `README.md` | Project README with skill catalog and documentation links |
 | `.devcontainer/devcontainer.json` | Devcontainer config with telemetry disabled |
 | `.gitignore` | Project gitignore (skills/, .clawhub/, etc.) |
 
