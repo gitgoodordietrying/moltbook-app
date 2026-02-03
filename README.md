@@ -1,6 +1,6 @@
 # moltbook-app
 
-Twenty-three agent skills published to [ClawdHub](https://clawdhub.com), targeting infrastructure categories that the registry's gold rush phase left empty — plus three meta-skills for writing, reviewing, and optimizing skills themselves. Built through systematic ecosystem analysis, not guesswork.
+Twenty-four agent skills published to [ClawdHub](https://clawdhub.com), targeting infrastructure categories that the registry's gold rush phase left empty — plus meta-skills for the ecosystem and an emergency rescue kit for when everything goes wrong. Built through systematic ecosystem analysis, not guesswork.
 
 **Author**: [@gitgoodordietrying](https://github.com/gitgoodordietrying)
 
@@ -51,13 +51,19 @@ Twenty-three agent skills published to [ClawdHub](https://clawdhub.com), targeti
 | [Skill Reviewer](skills/skill-reviewer/SKILL.md) | `molthub install skill-reviewer` | Skill quality audit — scoring rubric, defect checklists, structural/content/actionability review framework |
 | [Skill Search Optimizer](skills/skill-search-optimizer/SKILL.md) | `molthub install skill-search-optimizer` | Registry discoverability — semantic search mechanics, description optimization, visibility testing, competitive positioning |
 
+### Batch 5 — The Capstone
+
+| Skill | Install | What It Does |
+|---|---|---|
+| [Emergency Rescue Kit](skills/emergency-rescue/SKILL.md) | `molthub install emergency-rescue` | Git disasters, credential leaks, disk full, OOM kills, database failures, deploy rollbacks, SSH lockouts, network outages — step-by-step recovery |
+
 ## Why These Skills
 
 The ClawdHub registry launched in late January 2026. Within its first week, it accumulated ~200+ skills — mostly Twitter CLI forks, crypto bots, and "coding agent" duplicates. Standard gold rush dynamics.
 
 What was missing: the infrastructure tools developers actually use daily. SQL, testing, CI/CD, logging, security, profiling — zero coverage in any of these categories.
 
-Twenty skills fill those gaps, plus three meta-skills that help anyone write, review, and optimize skills for the registry. They're designed to age well: the content is useful whether the registry has 200 or 20,000 skills.
+Twenty skills fill those gaps, three meta-skills help anyone write and optimize skills for the registry, and the Emergency Rescue Kit is the skill you hope you never need — but will be grateful exists when you do. They're designed to age well: the content is useful whether the registry has 200 or 20,000 skills.
 
 Full analysis in [docs/journey.md](docs/journey.md).
 
@@ -89,6 +95,7 @@ moltbook-app/
     skill-writer/SKILL.md
     skill-reviewer/SKILL.md
     skill-search-optimizer/SKILL.md
+    emergency-rescue/SKILL.md
   docs/
     journey.md                      # Full session narrative — from package vetting to publishing
     research/
@@ -130,7 +137,7 @@ Install any skill with `molthub install <slug>`. Skills are placed in `./skills/
 
 All skills published under [@gitgoodordietrying](https://clawdhub.com) on ClawdHub:
 
-`docker-sandbox` | `csv-pipeline` | `api-dev` | `cicd-pipeline` | `sql-toolkit` | `test-patterns` | `log-analyzer` | `security-audit-toolkit` | `infra-as-code` | `perf-profiler` | `git-workflows` | `regex-patterns` | `ssh-tunnel` | `container-debug` | `data-validation` | `shell-scripting` | `dns-networking` | `cron-scheduling` | `encoding-formats` | `makefile-build` | `skill-writer` | `skill-reviewer` | `skill-search-optimizer`
+`docker-sandbox` | `csv-pipeline` | `api-dev` | `cicd-pipeline` | `sql-toolkit` | `test-patterns` | `log-analyzer` | `security-audit-toolkit` | `infra-as-code` | `perf-profiler` | `git-workflows` | `regex-patterns` | `ssh-tunnel` | `container-debug` | `data-validation` | `shell-scripting` | `dns-networking` | `cron-scheduling` | `encoding-formats` | `makefile-build` | `skill-writer` | `skill-reviewer` | `skill-search-optimizer` | `emergency-rescue`
 
 ## License
 

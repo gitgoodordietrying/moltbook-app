@@ -258,7 +258,13 @@ All ten gaps filled by skills published under **@gitgoodordietrying** during thi
 | Skill Reviewer | `skill-reviewer` | 1.0.0 | ~400 | Meta/quality |
 | Skill Search Optimizer | `skill-search-optimizer` | 1.0.0 | ~380 | Meta/discoverability |
 
-**Total**: 23 skills across 4 batches, ~10,200 lines of documented skill content.
+#### Batch 5 — The Capstone
+
+| Skill | Slug | Version | Lines | Category |
+|---|---|---|---|---|
+| Emergency Rescue Kit | `emergency-rescue` | 1.0.0 | ~600 | Emergency recovery |
+
+**Total**: 24 skills across 5 batches, ~10,800 lines of documented skill content.
 
 ---
 

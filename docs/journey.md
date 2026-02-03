@@ -2,7 +2,7 @@
 
 **Author**: Albert K Dobmeyer (@gitgoodordietrying)
 **Date**: 2026-02-03
-**Duration**: Single session, from first `npm info` to twenty-three published skills
+**Duration**: Single session, from first `npm info` to twenty-four published skills
 **Tools used**: Claude Code (Opus 4.5), Docker Desktop 4.59.0 Sandbox, molthub v0.3.1-beta.1
 
 ---
@@ -400,7 +400,35 @@ These are genuinely novel for the registry — no other skills exist that teach 
 
 ---
 
-## Phase 9: What I Learned
+## Phase 9: The Capstone — Emergency Rescue Kit
+
+The final skill was designed to be the single most valuable skill on the registry: a comprehensive emergency recovery guide for developer disasters. Instead of covering one tool or workflow, it covers every "oh no" moment across the entire stack.
+
+### Scope
+
+| Category | Scenarios Covered |
+|---|---|
+| Git disasters | Force-push recovery, lost commits, wrong branch, bad merge, corrupted repo |
+| Credential leaks | Secret in git history, .env pushed publicly, CI log exposure, rotation checklists |
+| Disk full | System cleanup, Docker reclamation, log truncation, artifact purging |
+| Process emergencies | Port conflicts, unkillable processes, OOM kills |
+| Database failures | Failed migrations, dropped tables, deadlocks, connection pool exhaustion |
+| Deploy rollbacks | Git revert, Docker rollback, Kubernetes undo, cloud provider patterns |
+| Access lockouts | SSH recovery, sudo restoration, cloud console escape hatches |
+| Network failures | Total connectivity loss, DNS propagation, diagnostic decision tree |
+| File recovery | Deleted file recovery, permission repair |
+
+Includes a universal diagnostic script that checks disk, memory, CPU, network, Docker, ports, and failed services in one pass.
+
+### Publishing output
+
+```
+✔ Published emergency-rescue@1.0.0
+```
+
+---
+
+## Phase 10: What I Learned
 
 ### About ClawdHub/MoltHub
 
@@ -414,7 +442,7 @@ These are genuinely novel for the registry — no other skills exist that teach 
 
 **Week 1 of any marketplace looks like this.** The duplication, the crypto dominance, the "No summary provided" skills — this is normal. It's also temporary. The signal is in the long-tail: memory systems, agent-to-agent protocols, safety tools, and international adoption patterns.
 
-**Infrastructure skills age well.** The Twitter CLI forks will consolidate. The gambling bots may attract regulatory attention. But a CI/CD pipeline skill, a data processing skill, and an API development skill will be useful in month 6 the same way they're useful today. The second batch doubled down on this thesis with SQL, testing, logging, security, IaC, and profiling. The third batch went deeper into niche-but-universal territory: git workflows, regex, SSH, shell scripting, encoding, cron, and Makefiles — permanent developer needs that resist trend decay. The meta-skills (batch 4) are a different bet: they're useful proportional to how many people publish skills, so their value grows with the platform.
+**Infrastructure skills age well.** The Twitter CLI forks will consolidate. The gambling bots may attract regulatory attention. But a CI/CD pipeline skill, a data processing skill, and an API development skill will be useful in month 6 the same way they're useful today. The second batch doubled down on this thesis with SQL, testing, logging, security, IaC, and profiling. The third batch went deeper into niche-but-universal territory: git workflows, regex, SSH, shell scripting, encoding, cron, and Makefiles — permanent developer needs that resist trend decay. The meta-skills (batch 4) are a different bet: they're useful proportional to how many people publish skills, so their value grows with the platform. The emergency rescue kit (batch 5) is the capstone — the skill you reach for when something has gone catastrophically wrong, which is precisely when having a calm, step-by-step guide matters most.
 
 ### About the Process
 
@@ -422,7 +450,7 @@ These are genuinely novel for the registry — no other skills exist that teach 
 
 **Reading the source pays off.** The API reverse engineering took 15 minutes but saved hours of trial-and-error. Understanding the discovery protocol, the auth flow, and the publish format meant I could diagnose the redirect bug instantly instead of guessing.
 
-**Ecosystem analysis before contribution prevents wasted effort.** Browsing the registry before designing skills meant I could target genuine gaps instead of adding to the duplicate pile. Twenty-two of the twenty-three skills published have zero competition in their categories (the exception, security auditing, had a slug conflict but no comparable content).
+**Ecosystem analysis before contribution prevents wasted effort.** Browsing the registry before designing skills meant I could target genuine gaps instead of adding to the duplicate pile. Twenty-three of the twenty-four skills published have zero competition in their categories (the exception, security auditing, had a slug conflict but no comparable content).
 
 ---
 
@@ -455,6 +483,7 @@ These are genuinely novel for the registry — no other skills exist that teach 
 | `skills/skill-writer/SKILL.md` | Published meta-skill: SKILL.md authoring guide |
 | `skills/skill-reviewer/SKILL.md` | Published meta-skill: Skill quality audit framework |
 | `skills/skill-search-optimizer/SKILL.md` | Published meta-skill: Search visibility optimization |
+| `skills/emergency-rescue/SKILL.md` | Published capstone skill: Emergency recovery procedures |
 | `docs/setup/claude-speckit.md` | Spec-driven agentic development framework reference |
 | `README.md` | Project README with skill catalog and documentation links |
 | `.devcontainer/devcontainer.json` | Devcontainer config with telemetry disabled |
@@ -462,7 +491,7 @@ These are genuinely novel for the registry — no other skills exist that teach 
 
 ## Registry Presence
 
-All twenty-three skills live at `https://clawdhub.com` under **@gitgoodordietrying**:
+All twenty-four skills live at `https://clawdhub.com` under **@gitgoodordietrying**:
 
 **Batch 1 — Gold rush gap-fill (built in Docker sandbox)**
 - [`/docker-sandbox`](https://clawdhub.com/skills/docker-sandbox) — v1.0.0
@@ -495,4 +524,7 @@ All twenty-three skills live at `https://clawdhub.com` under **@gitgoodordietryi
 - [`/skill-reviewer`](https://clawdhub.com/skills/skill-reviewer) — v1.0.0
 - [`/skill-search-optimizer`](https://clawdhub.com/skills/skill-search-optimizer) — v1.0.0
 
-**Combined output**: ~10,200 lines of skill content across 23 published skills.
+**Batch 5 — The capstone**
+- [`/emergency-rescue`](https://clawdhub.com/skills/emergency-rescue) — v1.0.0
+
+**Combined output**: ~10,800 lines of skill content across 24 published skills.
