@@ -2,14 +2,14 @@
 
 **Author**: Albert K Dobmeyer (@gitgoodordietrying)
 **Date**: 2026-02-03
-**Duration**: Single session, from first `npm info` to four published skills
+**Duration**: Single session, from first `npm info` to ten published skills
 **Tools used**: Claude Code (Opus 4.5), Docker Desktop 4.59.0 Sandbox, molthub v0.3.1-beta.1
 
 ---
 
 ## What I Did
 
-Explored a one-week-old agent skill registry (ClawdHub), assessed its security model, reverse-engineered its API, analyzed the ecosystem of ~200+ published skills, identified underserved categories, built four production-quality skills filling those gaps, and published them to the registry. All within an isolated Docker sandbox VM.
+Explored a one-week-old agent skill registry (ClawdHub), assessed its security model, reverse-engineered its API, analyzed the ecosystem of ~200+ published skills, identified underserved categories, built ten production-quality skills filling those gaps, and published them to the registry. The first batch of four was built inside an isolated Docker sandbox VM; the second batch of six targeted post-gold-rush infrastructure categories identified through ecosystem analysis.
 
 ## Why
 
@@ -265,7 +265,63 @@ All four verified searchable on the registry immediately after publishing.
 
 ---
 
-## Phase 6: What I Learned
+## Phase 6: Second Batch — Post-Gold-Rush Infrastructure Skills
+
+After analyzing the ecosystem trends, a clear pattern emerged: the gold rush phase would pass, duplicates would sink, and infrastructure tools would become the long-term backbone of the registry. Rather than waiting, the strategy was to publish into empty categories now, establishing early presence before competition arrives.
+
+### Gap Identification (Round 2)
+
+Six additional categories had zero or near-zero coverage:
+
+1. **SQL/database tooling** — no skill for writing queries, designing schemas, or optimizing databases
+2. **Testing patterns** — no cross-language testing reference (Jest, pytest, Go, Rust)
+3. **Log analysis** — no skill for parsing, searching, or debugging from log files
+4. **Security auditing** — one existing `security-audit` slug (claimed), but no comprehensive OWASP/dependency/secret scanning skill
+5. **Infrastructure as Code** — no Terraform, CloudFormation, or Pulumi skill
+6. **Performance profiling** — no CPU/memory profiling, flame graph, or load testing skill
+
+These are the tools developers reach for daily. Their absence from the registry was the clearest signal of where to contribute.
+
+### Skills Built
+
+| Skill | Slug | Lines | What It Covers |
+|---|---|---|---|
+| SQL Toolkit | `sql-toolkit` | 435 | SQLite/PostgreSQL/MySQL: schema design, JSONB queries, joins, CTEs, window functions, migrations, EXPLAIN optimization, index strategy, backup/restore |
+| Test Patterns | `test-patterns` | 607 | Node.js (Jest/Vitest), Python (pytest), Go, Rust, Bash: unit tests, async tests, mocking, fixtures, parametrized tests, coverage, TDD workflow, integration testing, debugging flaky tests |
+| Log Analyzer | `log-analyzer` | 394 | Plain text and JSON log parsing, error pattern search, stack trace extraction (Java/Python/Node.js), real-time monitoring with tail, structured logging setup (pino/structlog/zerolog), multi-service correlation, error frequency reports |
+| Security Audit Toolkit | `security-audit-toolkit` | 413 | Dependency scanning (npm audit, pip-audit, govulncheck, Trivy), secret detection (grep patterns + pre-commit hooks), OWASP top 10 code patterns, SSL/TLS verification, file permission audits, full project audit script |
+| Infrastructure as Code | `infra-as-code` | 520 | Terraform (VPC, EC2, S3, RDS, Lambda, state management, workspaces), CloudFormation templates, Pulumi (TypeScript/Python), multi-environment patterns, cost estimation, debugging drift |
+| Performance Profiler | `perf-profiler` | 485 | CPU profiling (V8 inspector, cProfile, pprof), memory analysis (heap snapshots, tracemalloc), flame graphs (0x, py-spy, clinic.js), benchmarking, load testing (ab, wrk, autocannon), memory leak detection, database query optimization |
+
+Total for batch 2: **2,854 lines** of skill content.
+
+### Publishing
+
+```
+$ molthub publish skills/sql-toolkit --slug sql-toolkit --name "SQL Toolkit" --version 1.0.0
+✔ OK. Published sql-toolkit@1.0.0 (k97dx1vmkpv76n1xreem8nrwgs80e32s)
+
+$ molthub publish skills/test-patterns --slug test-patterns --name "Test Patterns" --version 1.0.0
+✔ OK. Published test-patterns@1.0.0 (k977htp0dy0yaytp6e1nmss2vn80ez94)
+
+$ molthub publish skills/log-analyzer --slug log-analyzer --name "Log Analyzer" --version 1.0.0
+✔ OK. Published log-analyzer@1.0.0 (k972qka0qpzcrg86y9krk9py4s80f4d0)
+
+$ molthub publish skills/security-audit --slug security-audit-toolkit --name "Security Audit Toolkit" --version 1.0.0
+✔ OK. Published security-audit-toolkit@1.0.0 (k972vngfs7w9nabg2c7c481cth80fj14)
+
+$ molthub publish skills/infra-as-code --slug infra-as-code --name "Infrastructure as Code" --version 1.0.0
+✔ OK. Published infra-as-code@1.0.0 (k975xexf4ktwh98g71h8n1wxqd80f87c)
+
+$ molthub publish skills/perf-profiler --slug perf-profiler --name "Performance Profiler" --version 1.0.0
+✔ OK. Published perf-profiler@1.0.0 (k974r47173f0kz870jx9zf3chd80fbtr)
+```
+
+Note: The slug `security-audit` was already claimed by another publisher, so the skill was published as `security-audit-toolkit`. This is the first slug collision encountered — a sign the registry is growing.
+
+---
+
+## Phase 7: What I Learned
 
 ### About ClawdHub/MoltHub
 
@@ -279,7 +335,7 @@ All four verified searchable on the registry immediately after publishing.
 
 **Week 1 of any marketplace looks like this.** The duplication, the crypto dominance, the "No summary provided" skills — this is normal. It's also temporary. The signal is in the long-tail: memory systems, agent-to-agent protocols, safety tools, and international adoption patterns.
 
-**Infrastructure skills age well.** The Twitter CLI forks will consolidate. The gambling bots may attract regulatory attention. But a CI/CD pipeline skill, a data processing skill, and an API development skill will be useful in month 6 the same way they're useful today.
+**Infrastructure skills age well.** The Twitter CLI forks will consolidate. The gambling bots may attract regulatory attention. But a CI/CD pipeline skill, a data processing skill, and an API development skill will be useful in month 6 the same way they're useful today. The second batch doubled down on this thesis: SQL, testing, logging, security, IaC, and profiling are permanent developer needs, not trend-dependent.
 
 ### About the Process
 
@@ -287,7 +343,7 @@ All four verified searchable on the registry immediately after publishing.
 
 **Reading the source pays off.** The API reverse engineering took 15 minutes but saved hours of trial-and-error. Understanding the discovery protocol, the auth flow, and the publish format meant I could diagnose the redirect bug instantly instead of guessing.
 
-**Ecosystem analysis before contribution prevents wasted effort.** Browsing the registry before designing skills meant I could target genuine gaps instead of adding to the duplicate pile. The four skills I published have zero competition in their categories.
+**Ecosystem analysis before contribution prevents wasted effort.** Browsing the registry before designing skills meant I could target genuine gaps instead of adding to the duplicate pile. Nine of the ten skills published have zero competition in their categories (the tenth, security auditing, had a slug conflict but no comparable content).
 
 ---
 
@@ -301,14 +357,31 @@ All four verified searchable on the registry immediately after publishing.
 | `skills/csv-pipeline/SKILL.md` | Published skill: CSV/JSON data processing |
 | `skills/api-dev/SKILL.md` | Published skill: API development workflow |
 | `skills/cicd-pipeline/SKILL.md` | Published skill: CI/CD pipeline management |
+| `skills/sql-toolkit/SKILL.md` | Published skill: SQL database tooling |
+| `skills/test-patterns/SKILL.md` | Published skill: Cross-language testing patterns |
+| `skills/log-analyzer/SKILL.md` | Published skill: Log parsing and analysis |
+| `skills/security-audit/SKILL.md` | Published skill: Security auditing (slug: `security-audit-toolkit`) |
+| `skills/infra-as-code/SKILL.md` | Published skill: Infrastructure as Code |
+| `skills/perf-profiler/SKILL.md` | Published skill: Performance profiling |
 | `.devcontainer/devcontainer.json` | Devcontainer config with telemetry disabled |
 | `.gitignore` | Project gitignore (skills/, .clawhub/, etc.) |
 
 ## Registry Presence
 
-All four skills live at `https://clawdhub.com` under **@gitgoodordietrying**:
+All ten skills live at `https://clawdhub.com` under **@gitgoodordietrying**:
 
+**Batch 1 — Gold rush gap-fill (built in Docker sandbox)**
 - [`/docker-sandbox`](https://clawdhub.com/skills/docker-sandbox) — v1.0.0
 - [`/csv-pipeline`](https://clawdhub.com/skills/csv-pipeline) — v1.0.0
 - [`/api-dev`](https://clawdhub.com/skills/api-dev) — v1.0.0
 - [`/cicd-pipeline`](https://clawdhub.com/skills/cicd-pipeline) — v1.0.0
+
+**Batch 2 — Post-gold-rush infrastructure**
+- [`/sql-toolkit`](https://clawdhub.com/skills/sql-toolkit) — v1.0.0
+- [`/test-patterns`](https://clawdhub.com/skills/test-patterns) — v1.0.0
+- [`/log-analyzer`](https://clawdhub.com/skills/log-analyzer) — v1.0.0
+- [`/security-audit-toolkit`](https://clawdhub.com/skills/security-audit-toolkit) — v1.0.0
+- [`/infra-as-code`](https://clawdhub.com/skills/infra-as-code) — v1.0.0
+- [`/perf-profiler`](https://clawdhub.com/skills/perf-profiler) — v1.0.0
+
+**Combined output**: ~4,627 lines of skill content across 10 published skills.
