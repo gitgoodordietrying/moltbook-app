@@ -321,7 +321,62 @@ Note: The slug `security-audit` was already claimed by another publisher, so the
 
 ---
 
-## Phase 7: What I Learned
+## Phase 7: Third Batch — Niche Developer Essentials
+
+With infrastructure categories covered, the next frontier was niche-but-universal developer skills: the tools every developer uses but nobody documents comprehensively. These aren't flashy — they're the things people Google every time.
+
+### Gap Identification (Round 3)
+
+Ten categories where developers spend real time but the registry had nothing:
+
+1. **Advanced git** — rebase, bisect, worktree, reflog: the operations that separate daily users from power users
+2. **Regex** — the most Googled programming topic, with no cross-language reference
+3. **SSH tunneling** — remote access infrastructure that's poorly documented everywhere
+4. **Container debugging** — distinct from container management: debugging running containers, networking, crashed services
+5. **Data validation** — schema enforcement at API boundaries (JSON Schema, Zod, Pydantic)
+6. **Shell scripting** — the gap between "I can write bash" and "I can write reliable bash"
+7. **DNS & networking** — dig, curl verbose, firewall rules, proxy config, certificate issues
+8. **Cron & scheduling** — cron syntax, systemd timers, timezone handling, job monitoring
+9. **Encoding & formats** — Base64, URL encoding, JWT decoding, hex, Unicode: the "WTF is this string" toolkit
+10. **Makefiles & build** — Make, Just, Task: project automation that works across any language
+
+### Skills Built
+
+| Skill | Slug | Lines | What It Covers |
+|---|---|---|---|
+| Git Workflows | `git-workflows` | 520 | Interactive rebase, bisect, worktree, reflog, cherry-pick, subtree/submodule, sparse checkout, conflict resolution, stash, blame |
+| Regex Patterns | `regex-patterns` | 490 | Validation patterns, parsing, extraction, JS/Python/Go/grep, search-and-replace, lookahead/lookbehind, gotchas |
+| SSH Tunnel | `ssh-tunnel` | 430 | Local/remote/dynamic forwards, jump hosts, ProxyJump, SSH config, key management, scp/rsync, debugging |
+| Container Debug | `container-debug` | 440 | Logs, exec, networking, resource inspection, multi-stage builds, health checks, Compose troubleshooting |
+| Data Validation | `data-validation` | 420 | JSON Schema, Zod, Pydantic, CSV/JSON integrity, migration validation, API boundary patterns |
+| Shell Scripting | `shell-scripting` | 430 | Argument parsing, error handling, trap/cleanup, parallel execution, portability, config parsing |
+| DNS & Networking | `dns-networking` | 400 | dig/nslookup, port testing, firewall, curl diagnostics, /etc/hosts, proxy config, certificates |
+| Cron & Scheduling | `cron-scheduling` | 380 | Cron syntax, systemd timers, at, timezone/DST, monitoring, locking, idempotent patterns |
+| Encoding & Formats | `encoding-formats` | 370 | Base64, URL encoding, hex, Unicode, JWT decoding, hashing, checksums, format conversion |
+| Makefile & Build | `makefile-build` | 400 | Make basics, pattern rules, Go/Python/Node/Docker Makefiles, Just and Task alternatives |
+
+Total for batch 3: **~4,280 lines** of skill content.
+
+### Publishing
+
+All ten published without slug conflicts — a cleaner experience than batch 2.
+
+```
+✔ Published git-workflows@1.0.0
+✔ Published regex-patterns@1.0.0
+✔ Published ssh-tunnel@1.0.0
+✔ Published container-debug@1.0.0
+✔ Published data-validation@1.0.0
+✔ Published shell-scripting@1.0.0
+✔ Published dns-networking@1.0.0
+✔ Published cron-scheduling@1.0.0
+✔ Published encoding-formats@1.0.0
+✔ Published makefile-build@1.0.0
+```
+
+---
+
+## Phase 8: What I Learned
 
 ### About ClawdHub/MoltHub
 
@@ -335,7 +390,7 @@ Note: The slug `security-audit` was already claimed by another publisher, so the
 
 **Week 1 of any marketplace looks like this.** The duplication, the crypto dominance, the "No summary provided" skills — this is normal. It's also temporary. The signal is in the long-tail: memory systems, agent-to-agent protocols, safety tools, and international adoption patterns.
 
-**Infrastructure skills age well.** The Twitter CLI forks will consolidate. The gambling bots may attract regulatory attention. But a CI/CD pipeline skill, a data processing skill, and an API development skill will be useful in month 6 the same way they're useful today. The second batch doubled down on this thesis: SQL, testing, logging, security, IaC, and profiling are permanent developer needs, not trend-dependent.
+**Infrastructure skills age well.** The Twitter CLI forks will consolidate. The gambling bots may attract regulatory attention. But a CI/CD pipeline skill, a data processing skill, and an API development skill will be useful in month 6 the same way they're useful today. The second batch doubled down on this thesis with SQL, testing, logging, security, IaC, and profiling. The third batch went deeper into niche-but-universal territory: git workflows, regex, SSH, shell scripting, encoding, cron, and Makefiles — permanent developer needs that resist trend decay.
 
 ### About the Process
 
@@ -343,7 +398,7 @@ Note: The slug `security-audit` was already claimed by another publisher, so the
 
 **Reading the source pays off.** The API reverse engineering took 15 minutes but saved hours of trial-and-error. Understanding the discovery protocol, the auth flow, and the publish format meant I could diagnose the redirect bug instantly instead of guessing.
 
-**Ecosystem analysis before contribution prevents wasted effort.** Browsing the registry before designing skills meant I could target genuine gaps instead of adding to the duplicate pile. Nine of the ten skills published have zero competition in their categories (the tenth, security auditing, had a slug conflict but no comparable content).
+**Ecosystem analysis before contribution prevents wasted effort.** Browsing the registry before designing skills meant I could target genuine gaps instead of adding to the duplicate pile. Nineteen of the twenty skills published have zero competition in their categories (the twentieth, security auditing, had a slug conflict but no comparable content).
 
 ---
 
@@ -363,6 +418,16 @@ Note: The slug `security-audit` was already claimed by another publisher, so the
 | `skills/security-audit/SKILL.md` | Published skill: Security auditing (slug: `security-audit-toolkit`) |
 | `skills/infra-as-code/SKILL.md` | Published skill: Infrastructure as Code |
 | `skills/perf-profiler/SKILL.md` | Published skill: Performance profiling |
+| `skills/git-workflows/SKILL.md` | Published skill: Advanced git operations |
+| `skills/regex-patterns/SKILL.md` | Published skill: Regex cookbook |
+| `skills/ssh-tunnel/SKILL.md` | Published skill: SSH tunneling and remote access |
+| `skills/container-debug/SKILL.md` | Published skill: Docker container debugging |
+| `skills/data-validation/SKILL.md` | Published skill: Schema validation |
+| `skills/shell-scripting/SKILL.md` | Published skill: Robust bash scripting |
+| `skills/dns-networking/SKILL.md` | Published skill: DNS and network debugging |
+| `skills/cron-scheduling/SKILL.md` | Published skill: Cron and systemd timers |
+| `skills/encoding-formats/SKILL.md` | Published skill: Encoding and format conversion |
+| `skills/makefile-build/SKILL.md` | Published skill: Makefiles and build automation |
 | `docs/setup/claude-speckit.md` | Spec-driven agentic development framework reference |
 | `README.md` | Project README with skill catalog and documentation links |
 | `.devcontainer/devcontainer.json` | Devcontainer config with telemetry disabled |
@@ -370,7 +435,7 @@ Note: The slug `security-audit` was already claimed by another publisher, so the
 
 ## Registry Presence
 
-All ten skills live at `https://clawdhub.com` under **@gitgoodordietrying**:
+All twenty skills live at `https://clawdhub.com` under **@gitgoodordietrying**:
 
 **Batch 1 — Gold rush gap-fill (built in Docker sandbox)**
 - [`/docker-sandbox`](https://clawdhub.com/skills/docker-sandbox) — v1.0.0
@@ -386,4 +451,16 @@ All ten skills live at `https://clawdhub.com` under **@gitgoodordietrying**:
 - [`/infra-as-code`](https://clawdhub.com/skills/infra-as-code) — v1.0.0
 - [`/perf-profiler`](https://clawdhub.com/skills/perf-profiler) — v1.0.0
 
-**Combined output**: ~4,627 lines of skill content across 10 published skills.
+**Batch 3 — Niche developer essentials**
+- [`/git-workflows`](https://clawdhub.com/skills/git-workflows) — v1.0.0
+- [`/regex-patterns`](https://clawdhub.com/skills/regex-patterns) — v1.0.0
+- [`/ssh-tunnel`](https://clawdhub.com/skills/ssh-tunnel) — v1.0.0
+- [`/container-debug`](https://clawdhub.com/skills/container-debug) — v1.0.0
+- [`/data-validation`](https://clawdhub.com/skills/data-validation) — v1.0.0
+- [`/shell-scripting`](https://clawdhub.com/skills/shell-scripting) — v1.0.0
+- [`/dns-networking`](https://clawdhub.com/skills/dns-networking) — v1.0.0
+- [`/cron-scheduling`](https://clawdhub.com/skills/cron-scheduling) — v1.0.0
+- [`/encoding-formats`](https://clawdhub.com/skills/encoding-formats) — v1.0.0
+- [`/makefile-build`](https://clawdhub.com/skills/makefile-build) — v1.0.0
+
+**Combined output**: ~8,900 lines of skill content across 20 published skills.

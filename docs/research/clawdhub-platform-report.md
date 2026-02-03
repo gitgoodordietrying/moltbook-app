@@ -209,7 +209,7 @@ metadata: {"clawdbot":{"emoji":"...","requires":{"bins":["cmd1"],"anyBins":["cmd
 - ~~**No infrastructure-as-code skill**~~ → filled by `infra-as-code`
 - ~~**No performance profiling skill**~~ → filled by `perf-profiler`
 
-All ten gaps filled by skills published under **@gitgoodordietrying** during this session.
+All ten gaps filled by skills published under **@gitgoodordietrying** during this session. An additional ten niche developer-essential skills were published to deepen coverage.
 
 ### Published Skills (@gitgoodordietrying)
 
@@ -235,7 +235,22 @@ All ten gaps filled by skills published under **@gitgoodordietrying** during thi
 
 **Note**: `security-audit` slug was already claimed by another publisher; published as `security-audit-toolkit`.
 
-**Total**: 10 skills, ~4,627 lines of documented skill content.
+#### Batch 3 — Niche Developer Essentials
+
+| Skill | Slug | Version | Lines | Category |
+|---|---|---|---|---|
+| Git Workflows | `git-workflows` | 1.0.0 | ~520 | Version control |
+| Regex Patterns | `regex-patterns` | 1.0.0 | ~490 | Developer tools |
+| SSH Tunnel | `ssh-tunnel` | 1.0.0 | ~430 | Networking/remote |
+| Container Debug | `container-debug` | 1.0.0 | ~440 | DevOps/containers |
+| Data Validation | `data-validation` | 1.0.0 | ~420 | Data integrity |
+| Shell Scripting | `shell-scripting` | 1.0.0 | ~430 | Developer tools |
+| DNS & Networking | `dns-networking` | 1.0.0 | ~400 | Networking |
+| Cron & Scheduling | `cron-scheduling` | 1.0.0 | ~380 | Operations |
+| Encoding & Formats | `encoding-formats` | 1.0.0 | ~370 | Developer tools |
+| Makefile & Build | `makefile-build` | 1.0.0 | ~400 | Build automation |
+
+**Total**: 20 skills across 3 batches, ~8,900 lines of documented skill content.
 
 ---
 
