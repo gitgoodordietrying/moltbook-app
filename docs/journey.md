@@ -2,7 +2,7 @@
 
 **Author**: Albert K Dobmeyer (@gitgoodordietrying)
 **Date**: 2026-02-03
-**Duration**: Single session, from first `npm info` to ten published skills
+**Duration**: Single session, from first `npm info` to twenty-three published skills
 **Tools used**: Claude Code (Opus 4.5), Docker Desktop 4.59.0 Sandbox, molthub v0.3.1-beta.1
 
 ---
@@ -376,7 +376,31 @@ All ten published without slug conflicts — a cleaner experience than batch 2.
 
 ---
 
-## Phase 8: What I Learned
+## Phase 8: Meta-Skills — Tools for Skill Authors
+
+With twenty infrastructure and developer skills published, one category remained unfilled: tooling for the skill ecosystem itself. Three meta-skills were designed to help anyone writing, reviewing, or optimizing skills for the registry.
+
+### Skills built
+
+| Skill | Slug | What It Covers |
+|---|---|---|
+| Skill Writer | `skill-writer` | SKILL.md format spec, frontmatter schema, content patterns, templates for different skill types, size guidelines, publishing checklist |
+| Skill Reviewer | `skill-reviewer` | Structured review framework with scoring rubric (53-point scale), defect checklists by severity, comparative review criteria, quick review template |
+| Skill Search Optimizer | `skill-search-optimizer` | How vector search works (OpenAI embeddings + Convex), description optimization formulas, visibility testing matrix, competitive positioning strategies |
+
+### Publishing output
+
+```
+✔ Published skill-writer@1.0.0
+✔ Published skill-reviewer@1.0.0
+✔ Published skill-search-optimizer@1.0.0
+```
+
+These are genuinely novel for the registry — no other skills exist that teach you how to build skills.
+
+---
+
+## Phase 9: What I Learned
 
 ### About ClawdHub/MoltHub
 
@@ -390,7 +414,7 @@ All ten published without slug conflicts — a cleaner experience than batch 2.
 
 **Week 1 of any marketplace looks like this.** The duplication, the crypto dominance, the "No summary provided" skills — this is normal. It's also temporary. The signal is in the long-tail: memory systems, agent-to-agent protocols, safety tools, and international adoption patterns.
 
-**Infrastructure skills age well.** The Twitter CLI forks will consolidate. The gambling bots may attract regulatory attention. But a CI/CD pipeline skill, a data processing skill, and an API development skill will be useful in month 6 the same way they're useful today. The second batch doubled down on this thesis with SQL, testing, logging, security, IaC, and profiling. The third batch went deeper into niche-but-universal territory: git workflows, regex, SSH, shell scripting, encoding, cron, and Makefiles — permanent developer needs that resist trend decay.
+**Infrastructure skills age well.** The Twitter CLI forks will consolidate. The gambling bots may attract regulatory attention. But a CI/CD pipeline skill, a data processing skill, and an API development skill will be useful in month 6 the same way they're useful today. The second batch doubled down on this thesis with SQL, testing, logging, security, IaC, and profiling. The third batch went deeper into niche-but-universal territory: git workflows, regex, SSH, shell scripting, encoding, cron, and Makefiles — permanent developer needs that resist trend decay. The meta-skills (batch 4) are a different bet: they're useful proportional to how many people publish skills, so their value grows with the platform.
 
 ### About the Process
 
@@ -398,7 +422,7 @@ All ten published without slug conflicts — a cleaner experience than batch 2.
 
 **Reading the source pays off.** The API reverse engineering took 15 minutes but saved hours of trial-and-error. Understanding the discovery protocol, the auth flow, and the publish format meant I could diagnose the redirect bug instantly instead of guessing.
 
-**Ecosystem analysis before contribution prevents wasted effort.** Browsing the registry before designing skills meant I could target genuine gaps instead of adding to the duplicate pile. Nineteen of the twenty skills published have zero competition in their categories (the twentieth, security auditing, had a slug conflict but no comparable content).
+**Ecosystem analysis before contribution prevents wasted effort.** Browsing the registry before designing skills meant I could target genuine gaps instead of adding to the duplicate pile. Twenty-two of the twenty-three skills published have zero competition in their categories (the exception, security auditing, had a slug conflict but no comparable content).
 
 ---
 
@@ -428,6 +452,9 @@ All ten published without slug conflicts — a cleaner experience than batch 2.
 | `skills/cron-scheduling/SKILL.md` | Published skill: Cron and systemd timers |
 | `skills/encoding-formats/SKILL.md` | Published skill: Encoding and format conversion |
 | `skills/makefile-build/SKILL.md` | Published skill: Makefiles and build automation |
+| `skills/skill-writer/SKILL.md` | Published meta-skill: SKILL.md authoring guide |
+| `skills/skill-reviewer/SKILL.md` | Published meta-skill: Skill quality audit framework |
+| `skills/skill-search-optimizer/SKILL.md` | Published meta-skill: Search visibility optimization |
 | `docs/setup/claude-speckit.md` | Spec-driven agentic development framework reference |
 | `README.md` | Project README with skill catalog and documentation links |
 | `.devcontainer/devcontainer.json` | Devcontainer config with telemetry disabled |
@@ -435,7 +462,7 @@ All ten published without slug conflicts — a cleaner experience than batch 2.
 
 ## Registry Presence
 
-All twenty skills live at `https://clawdhub.com` under **@gitgoodordietrying**:
+All twenty-three skills live at `https://clawdhub.com` under **@gitgoodordietrying**:
 
 **Batch 1 — Gold rush gap-fill (built in Docker sandbox)**
 - [`/docker-sandbox`](https://clawdhub.com/skills/docker-sandbox) — v1.0.0
@@ -463,4 +490,9 @@ All twenty skills live at `https://clawdhub.com` under **@gitgoodordietrying**:
 - [`/encoding-formats`](https://clawdhub.com/skills/encoding-formats) — v1.0.0
 - [`/makefile-build`](https://clawdhub.com/skills/makefile-build) — v1.0.0
 
-**Combined output**: ~8,900 lines of skill content across 20 published skills.
+**Batch 4 — Meta-skills**
+- [`/skill-writer`](https://clawdhub.com/skills/skill-writer) — v1.0.0
+- [`/skill-reviewer`](https://clawdhub.com/skills/skill-reviewer) — v1.0.0
+- [`/skill-search-optimizer`](https://clawdhub.com/skills/skill-search-optimizer) — v1.0.0
+
+**Combined output**: ~10,200 lines of skill content across 23 published skills.

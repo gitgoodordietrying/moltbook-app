@@ -250,7 +250,15 @@ All ten gaps filled by skills published under **@gitgoodordietrying** during thi
 | Encoding & Formats | `encoding-formats` | 1.0.0 | ~370 | Developer tools |
 | Makefile & Build | `makefile-build` | 1.0.0 | ~400 | Build automation |
 
-**Total**: 20 skills across 3 batches, ~8,900 lines of documented skill content.
+#### Batch 4 — Meta-Skills
+
+| Skill | Slug | Version | Lines | Category |
+|---|---|---|---|---|
+| Skill Writer | `skill-writer` | 1.0.0 | ~430 | Meta/authoring |
+| Skill Reviewer | `skill-reviewer` | 1.0.0 | ~400 | Meta/quality |
+| Skill Search Optimizer | `skill-search-optimizer` | 1.0.0 | ~380 | Meta/discoverability |
+
+**Total**: 23 skills across 4 batches, ~10,200 lines of documented skill content.
 
 ---
 

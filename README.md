@@ -1,6 +1,6 @@
 # moltbook-app
 
-Twenty agent skills published to [ClawdHub](https://clawdhub.com), targeting infrastructure categories that the registry's gold rush phase left empty. Built through systematic ecosystem analysis, not guesswork.
+Twenty-three agent skills published to [ClawdHub](https://clawdhub.com), targeting infrastructure categories that the registry's gold rush phase left empty — plus three meta-skills for writing, reviewing, and optimizing skills themselves. Built through systematic ecosystem analysis, not guesswork.
 
 **Author**: [@gitgoodordietrying](https://github.com/gitgoodordietrying)
 
@@ -43,13 +43,21 @@ Twenty agent skills published to [ClawdHub](https://clawdhub.com), targeting inf
 | [Encoding & Formats](skills/encoding-formats/SKILL.md) | `molthub install encoding-formats` | Base64, URL encoding, hex, Unicode, JWT decoding, hashing/checksums, serialization format conversion |
 | [Makefile & Build](skills/makefile-build/SKILL.md) | `molthub install makefile-build` | Make targets, pattern rules, Go/Python/Node/Docker Makefiles, Just and Task as modern alternatives |
 
+### Batch 4 — Meta-Skills
+
+| Skill | Install | What It Does |
+|---|---|---|
+| [Skill Writer](skills/skill-writer/SKILL.md) | `molthub install skill-writer` | SKILL.md authoring guide — format spec, frontmatter schema, content patterns, templates, publishing checklist |
+| [Skill Reviewer](skills/skill-reviewer/SKILL.md) | `molthub install skill-reviewer` | Skill quality audit — scoring rubric, defect checklists, structural/content/actionability review framework |
+| [Skill Search Optimizer](skills/skill-search-optimizer/SKILL.md) | `molthub install skill-search-optimizer` | Registry discoverability — semantic search mechanics, description optimization, visibility testing, competitive positioning |
+
 ## Why These Skills
 
 The ClawdHub registry launched in late January 2026. Within its first week, it accumulated ~200+ skills — mostly Twitter CLI forks, crypto bots, and "coding agent" duplicates. Standard gold rush dynamics.
 
 What was missing: the infrastructure tools developers actually use daily. SQL, testing, CI/CD, logging, security, profiling — zero coverage in any of these categories.
 
-These twenty skills fill those gaps. They're designed to age well: the content is useful whether the registry has 200 or 20,000 skills.
+Twenty skills fill those gaps, plus three meta-skills that help anyone write, review, and optimize skills for the registry. They're designed to age well: the content is useful whether the registry has 200 or 20,000 skills.
 
 Full analysis in [docs/journey.md](docs/journey.md).
 
@@ -78,6 +86,9 @@ moltbook-app/
     cron-scheduling/SKILL.md
     encoding-formats/SKILL.md
     makefile-build/SKILL.md
+    skill-writer/SKILL.md
+    skill-reviewer/SKILL.md
+    skill-search-optimizer/SKILL.md
   docs/
     journey.md                      # Full session narrative — from package vetting to publishing
     research/
@@ -119,7 +130,7 @@ Install any skill with `molthub install <slug>`. Skills are placed in `./skills/
 
 All skills published under [@gitgoodordietrying](https://clawdhub.com) on ClawdHub:
 
-`docker-sandbox` | `csv-pipeline` | `api-dev` | `cicd-pipeline` | `sql-toolkit` | `test-patterns` | `log-analyzer` | `security-audit-toolkit` | `infra-as-code` | `perf-profiler` | `git-workflows` | `regex-patterns` | `ssh-tunnel` | `container-debug` | `data-validation` | `shell-scripting` | `dns-networking` | `cron-scheduling` | `encoding-formats` | `makefile-build`
+`docker-sandbox` | `csv-pipeline` | `api-dev` | `cicd-pipeline` | `sql-toolkit` | `test-patterns` | `log-analyzer` | `security-audit-toolkit` | `infra-as-code` | `perf-profiler` | `git-workflows` | `regex-patterns` | `ssh-tunnel` | `container-debug` | `data-validation` | `shell-scripting` | `dns-networking` | `cron-scheduling` | `encoding-formats` | `makefile-build` | `skill-writer` | `skill-reviewer` | `skill-search-optimizer`
 
 ## License
 
