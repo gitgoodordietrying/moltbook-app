@@ -197,13 +197,45 @@ metadata: {"clawdbot":{"emoji":"...","requires":{"bins":["cmd1"],"anyBins":["cmd
 9. **Security**: secops-by-joes, wed (supply chain demo)
 10. **Browser**: agent-browser, verify-on-browser, browser-use
 
-### Gaps Identified
-- **No CSV/data processing skill** - data ETL, transformation, analysis
-- **No Docker/container management skill**
-- **No database query skill** (except Snowflake MCP)
-- **No CI/CD skill**
-- **Limited testing/QA skills**
-- **No API development/documentation skill**
+### Gaps Identified (Pre-Contribution)
+- ~~**No CSV/data processing skill**~~ → filled by `csv-pipeline`
+- ~~**No Docker/container management skill**~~ → filled by `docker-sandbox`
+- ~~**No database query skill**~~ (except Snowflake MCP) → filled by `sql-toolkit`
+- ~~**No CI/CD skill**~~ → filled by `cicd-pipeline`
+- ~~**Limited testing/QA skills**~~ → filled by `test-patterns`
+- ~~**No API development/documentation skill**~~ → filled by `api-dev`
+- ~~**No log analysis/debugging skill**~~ → filled by `log-analyzer`
+- ~~**No security auditing skill**~~ → filled by `security-audit-toolkit`
+- ~~**No infrastructure-as-code skill**~~ → filled by `infra-as-code`
+- ~~**No performance profiling skill**~~ → filled by `perf-profiler`
+
+All ten gaps filled by skills published under **@gitgoodordietrying** during this session.
+
+### Published Skills (@gitgoodordietrying)
+
+#### Batch 1 — Gold Rush Gap-Fill
+
+| Skill | Slug | Version | Lines | Category |
+|---|---|---|---|---|
+| Docker Sandbox | `docker-sandbox` | 1.0.0 | 246 | DevOps/containers |
+| CSV Data Pipeline | `csv-pipeline` | 1.0.0 | 433 | Data processing |
+| API Development | `api-dev` | 1.0.0 | 509 | Developer tools |
+| CI/CD Pipeline | `cicd-pipeline` | 1.0.0 | 585 | DevOps/CI |
+
+#### Batch 2 — Post-Gold-Rush Infrastructure
+
+| Skill | Slug | Version | Lines | Category |
+|---|---|---|---|---|
+| SQL Toolkit | `sql-toolkit` | 1.0.0 | 435 | Database tooling |
+| Test Patterns | `test-patterns` | 1.0.0 | 607 | Testing/QA |
+| Log Analyzer | `log-analyzer` | 1.0.0 | 394 | Debugging/observability |
+| Security Audit Toolkit | `security-audit-toolkit` | 1.0.0 | 413 | Security |
+| Infrastructure as Code | `infra-as-code` | 1.0.0 | 520 | DevOps/IaC |
+| Performance Profiler | `perf-profiler` | 1.0.0 | 485 | Performance |
+
+**Note**: `security-audit` slug was already claimed by another publisher; published as `security-audit-toolkit`.
+
+**Total**: 10 skills, ~4,627 lines of documented skill content.
 
 ---
 
