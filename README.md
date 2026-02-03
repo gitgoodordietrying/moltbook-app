@@ -71,7 +71,8 @@ Full analysis in [docs/journey.md](docs/journey.md).
 
 ```
 moltbook-app/
-  skills/                           # Published skill bundles
+  skills/                           # Published skill bundles + one installed sample
+    coding-agent/SKILL.md           # (installed from registry during research — not ours)
     docker-sandbox/SKILL.md
     csv-pipeline/SKILL.md
     api-dev/SKILL.md
