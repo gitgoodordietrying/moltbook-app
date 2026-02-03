@@ -1,0 +1,13 @@
+node_modules/
+.env
+.env.local
+dist/
+build/
+
+# ClawdHub lockfile and origin metadata (generated on install)
+.clawdhub/
+skills/*/.clawdhub/
+
+# Keep skills and docs tracked
+!skills/
+!docs/

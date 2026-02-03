@@ -1,0 +1,12 @@
+{
+    "name": "moltbook-app",
+    "version": "1.0.0",
+    "description": "Sandboxed Moltbook Application",
+    "main": "index.js",
+    "scripts": {
+      "explore": "npx molthub@latest install moltbook"
+    },
+    "keywords": ["moltbook", "ai-agents", "ai-chatbot", "ai-assistant", "ai-tools", "ai-development", "ai-programming", "ai-agentic", "ai-agentic-programming", "ai-agentic-development", "ai-agentic-tools", "ai-agentic-chatbot", "ai-agentic-assistant", "ai-agentic-programming", "ai-agentic-development", "ai-agentic-tools", "ai-agentic-chatbot", "ai-agentic-assistant"],
+    "author": "Albert K Dobmeyer",
+    "license": "MIT"
+  }
