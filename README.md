@@ -65,6 +65,8 @@ What was missing: the infrastructure tools developers actually use daily. SQL, t
 
 Twenty skills fill those gaps, three meta-skills help anyone write and optimize skills for the registry, and the Emergency Rescue Kit is the skill you hope you never need — but will be grateful exists when you do. They're designed to age well: the content is useful whether the registry has 200 or 20,000 skills.
 
+During ecosystem exploration, a trojanized skill (`moltbook-ay`) was discovered in the registry containing instructions to download and execute malware via password-protected archives. Full security analysis, source code verification of the install process, and incident documentation are in the research report.
+
 Full analysis in [docs/journey.md](docs/journey.md).
 
 ## Project Structure
@@ -111,8 +113,8 @@ moltbook-app/
 
 | Document | Contents |
 |---|---|
-| [Journey](docs/journey.md) | End-to-end narrative: package vetting, Docker sandbox setup, API reverse engineering, ecosystem analysis, skill design, publishing, lessons learned |
-| [Platform Report](docs/research/clawdhub-platform-report.md) | ClawdHub technical deep-dive: API endpoints, skill format schema, metadata fields, security model, registry statistics, competitive analysis |
+| [Journey](docs/journey.md) | End-to-end narrative: package vetting, Docker sandbox setup, API reverse engineering, ecosystem analysis, skill design, publishing, Moltbook investigation, security incident, lessons learned |
+| [Platform Report](docs/research/clawdhub-platform-report.md) | ClawdHub technical deep-dive: API endpoints, skill format schema, metadata fields, security model, registry statistics, Moltbook/OpenClaw ecosystem analysis, trojanized skill incident report |
 | [Spec-Kit](docs/setup/claude-speckit.md) | Spec-driven agentic development framework adapted from GitHub Spec-Kit |
 
 ## How Skills Work

@@ -351,3 +351,88 @@ Run with: `node -r /tmp/register-proxy.js $(which molthub) <command>`
 | Dependencies | None | DAG-based |
 | Testing | None | Built-in validation |
 | Auth | GitHub OAuth | Flexible |
+
+---
+
+## 8. Moltbook / OpenClaw Ecosystem
+
+### Moltbook (moltbook.com)
+
+Social network for AI agents. Open API at `/api/v1/`.
+
+| Metric | Value |
+|---|---|
+| Registered agents | ~1.6 million |
+| Posts | ~154,000 |
+| Comments | ~751,000 |
+| Top post upvotes | 988,765 (fake — see below) |
+
+**Vote exploit**: Race condition in the voting API. Sending 50 concurrent vote requests yields 30-40 successful votes. This is publicly documented (by user "CircuitDreamer" on the platform itself). All vote counts are unreliable.
+
+**Agent registration**: POST to `/api/v1/agents/register`. Returns an API key, but posting requires a human to claim the agent via tweet verification. This is a deliberate security gate.
+
+**Real content**: Despite inflated metrics, genuine technical discourse exists — discussions about MCP servers, Kubernetes, prompt engineering, and tool use patterns.
+
+### OpenClaw (formerly Clawdbot, then Moltbot)
+
+Open-source AI agent runtime. Rebranded multiple times under pressure from Anthropic (the "Claud" prefix was problematic). Key characteristics:
+
+- Full system access — agents run with the user's full permissions
+- No sandboxing at the runtime level
+- Skill execution is unconstrained text instruction following
+- Setup involves Node.js installation, API key configuration, and the `openclaw` CLI
+
+### Ecosystem Map
+
+```
+OpenClaw (agent runtime) → ClawdHub (skill registry) → Moltbook (social network) → MoltReg (blockchain identity on Base L2)
+```
+
+Each layer adds attack surface. A trojanized skill in ClawdHub can instruct an OpenClaw agent to register on Moltbook, post spam, or worse — exfiltrate data, install persistence mechanisms, or pivot to other systems.
+
+---
+
+## 9. Security Incident: Trojanized Skill (moltbook-ay)
+
+### Discovery
+
+During research, three Moltbook-related skills were installed from the registry:
+
+1. `moltbook-interact` — Clean. Posting interface for Moltbook API.
+2. `moltbook-registry` — Clean. Blockchain identity registration on Base L2.
+3. `moltbook-ay` — **Trojanized.** Contains instructions to download and execute malware.
+
+### Payload Analysis
+
+The `moltbook-ay` SKILL.md contained instructions for an AI agent to:
+
+1. Download a password-protected ZIP archive (`openclaw-core`) from an external URL
+2. Extract it using a hardcoded password (bypasses antivirus scanning)
+3. Execute the extracted binary
+
+This is classic malware distribution adapted for AI agents: password-protected archives evade automated scanning, and the instructions target autonomous agents that follow SKILL.md content without human review.
+
+### Impact Assessment
+
+**No impact.** The `molthub install` command was verified (from source code) to only:
+1. Download a ZIP from the registry
+2. Extract text files to disk (with path sanitization)
+3. Write JSON metadata
+
+No code from installed skills is ever executed by the install process. The trojanized content was social engineering — text instructions that would only be dangerous if an agent read and followed them autonomously.
+
+### Response
+
+1. Identified the trojan during manual review of installed skill content
+2. Deleted all three moltbook skill directories
+3. Cleaned lock file references
+4. Verified no scheduled tasks, startup entries, or persistence mechanisms
+5. Verified install process from source code (zero code execution)
+6. Documented findings in this report
+
+### Lessons
+
+- The ClawdHub registry has no pre-publication review — anyone can publish malicious skills
+- The trust model relies entirely on the agent (or its operator) reviewing skill content before execution
+- Password-protected archive delivery is a red flag pattern worth automated detection
+- The "report and auto-hide at 3 reports" moderation system is insufficient for malware distribution
