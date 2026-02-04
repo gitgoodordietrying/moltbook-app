@@ -8,6 +8,9 @@ build/
 .clawdhub/
 skills/*/.clawdhub/
 
+# Claude Code local settings
+.claude/
+
 # Keep skills and docs tracked
 !skills/
 !docs/
